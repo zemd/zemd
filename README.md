@@ -43,6 +43,6 @@ KNOWN BUGS
     Requires to use Linkedin messages before establishing communication via email.
 
 SEE ALSO
-    <a href="https://codeandgin.co" target="_blank">blog(4)</a>, <a href="https://www.linkedin.com/in/zelenetskydmitry/" target="_blank">linkedin(4)</a>,
-    <a href="https://bit.ly/3qtwU2u" target="_blank">onlyfans(6)</a>, <a href="https://www.codewars.com/users/zemd" target="_blank">codewars(4)</a>
+    <a href="bit.ly/3R8pCfu" target="_blank">blog(4)</a>, <a href="bit.ly/44H71tU" target="_blank">linkedin(4)</a>,
+    <a href="https://bit.ly/3qtwU2u" target="_blank">onlyfans(6)</a>, <a href="bit.ly/44wLunP" target="_blank">codewars(4)</a>
 </pre>
