@@ -43,6 +43,6 @@ KNOWN BUGS
     Requires to use Linkedin messages before establishing communication via email.
 
 SEE ALSO
-    <a href="https://bit.ly/3R8pCfu" target="_blank">blog(4)</a>, <a href="https://bit.ly/44H71tU" target="_blank">linkedin(4)</a>,
-    <a href="https://bit.ly/3qtwU2u" target="_blank">onlyfans(6)</a>, <a href="https://bit.ly/44wLunP" target="_blank">codewars(4)</a>
+    <a href="https://okro.sh/gc" target="_blank">blog(4)</a>, <a href="https://okro.sh/gl" target="_blank">linkedin(4)</a>,
+    <a href="https://okro.sh/gofs" target="_blank">onlyfans(6)</a>, <a href="https://okro.sh/gcws" target="_blank">codewars(4)</a>
 </pre>
