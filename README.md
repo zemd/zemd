@@ -27,7 +27,8 @@ OPTIONS
 
     --yarn
         Displays the list of yarn2 plugins and yarn2 related tools. The list 
-        includes <a href="https://github.com/zemd/yarn-plugin-wait">yarn-plugin-wait</a>, <a href="https://github.com/zemd/yarn-plugin-script-tools">yarn-plugin-script-tools</a>, <a href="https://github.com/zemd/yarn-plugin-check">yarn-plugin-check</a>, <a href="https://github.com/zemd/yarn-plugin-banner-tools">yarn-plugin-banner-tools</a>
+        includes <a href="https://github.com/zemd/yarn-plugin-wait">yarn-plugin-wait</a>, <a href="https://github.com/zemd/yarn-plugin-script-tools">yarn-plugin-script-tools</a>, <a href="https://github.com/zemd/yarn-plugin-check">yarn-plugin-check</a>, 
+        <a href="https://github.com/zemd/yarn-plugin-banner-tools">yarn-plugin-banner-tools</a>
 
     --fonts
         Displays the list of fonts that I distribute as npm package. The list 
