@@ -20,7 +20,7 @@ OPTIONS
 
     --show-essential
         Displays the list of essential projects for my projects. The list 
-        includes <a href="https://github.com/zemd/tsconfig">@zemd/tsconfig</a>, <a href="https://github.com/zemd/eslint-flat-config">@zemd/eslint-flat-config</a>, .dotfiles
+        includes <a href="https://github.com/zemd/tsconfig">@zemd/tsconfig</a>, <a href="https://github.com/zemd/eslint-flat-config">@zemd/eslint-flat-config</a>, .dotfiles, <a href="https://github.com/zemd/vscode-theme-zemd">vscode dark theme</a>
 
     --show-react
         Displays the list of react projects. The list includes <a href="https://github.com/zemd/npm-react-slottable">@zemd/react-slottable</a>
