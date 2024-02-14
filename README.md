@@ -25,6 +25,11 @@ OPTIONS
     --show-react
         Displays the list of react projects. The list includes <a href="https://github.com/zemd/npm-react-slottable">@zemd/react-slottable</a>
 
+    --show-js-lib
+        Displays various javascript or/and typescript libraries that makes life easier. The list includes: 
+          - <a href="https://github.com/zemd/apis/tree/main/packages/http-client">@zemd/http-client</a> - lightweight and functional http client builder
+          - <a href="https://github.com/zemd/apis/tree/main/apis/figma">@zemd/figma-rest-api</a> - a rest api client for Figma
+  
     --show-yarn
         Displays the list of yarn2 plugins and yarn2 related tools. The list 
         includes <a href="https://github.com/zemd/yarn-plugin-wait">yarn-plugin-wait</a>, <a href="https://github.com/zemd/yarn-plugin-script-tools">yarn-plugin-script-tools</a>, <a href="https://github.com/zemd/yarn-plugin-check">yarn-plugin-check</a>, 
