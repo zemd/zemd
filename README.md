@@ -29,6 +29,7 @@ OPTIONS
         Displays various javascript or/and typescript libraries that makes life easier. The list includes: 
           - <a href="https://github.com/zemd/apis/tree/main/packages/http-client">@zemd/http-client</a> - lightweight and functional http client builder
           - <a href="https://github.com/zemd/apis/tree/main/apis/figma">@zemd/figma-rest-api</a> - a rest api client for Figma
+          - <a href="https://github.com/zemd/nestjs-pino-logger">@zemd/nestjs-pino-logger</a> - a pino logger integration with nestjs framework
   
     --show-yarn
         Displays the list of yarn2 plugins and yarn2 related tools. The list 
