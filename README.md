@@ -40,6 +40,10 @@ OPTIONS
     --show-fonts
         Displays the list of fonts that I distribute as npm package. The list 
         includes <a href="https://github.com/zemd/typeface-cisco-sans-tt">typeface-cisco-sans-tt</a>, <a href="https://github.com/zemd/typeface-open-sauce-fonts">typeface-open-sauce-fonts</a>
+
+    --contributions
+        Displays the list of open source projects that I participated in. The list includes:
+          - <a href="https://github.com/hazelcast/hazelcast-nodejs-client">hazelcast-client</a> (2017)- implemented `ReplicatedMap` and `Semaphore` data structures
   
 SUPPORTED EXTENSIONS
     *.sh, *.js, *.ts, *.tsx,
