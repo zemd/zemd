@@ -38,6 +38,10 @@ OPTIONS
         includes <a href="https://github.com/zemd/yarn-plugin-wait">yarn-plugin-wait</a>, <a href="https://github.com/zemd/yarn-plugin-script-tools">yarn-plugin-script-tools</a>, <a href="https://github.com/zemd/yarn-plugin-check">yarn-plugin-check</a>, 
         <a href="https://github.com/zemd/yarn-plugin-banner-tools">yarn-plugin-banner-tools</a>
 
+    --show-cli
+        Displays the list of cli tools I made. Th list includes 
+          - <a href="https://github.com/zemd/webdav-watch">webdav-watch</a> - a simple cli tool for synchronizing folder with remote webdav server
+  
     --show-fonts
         Displays the list of fonts that I distribute as npm package. The list 
         includes <a href="https://github.com/zemd/typeface-cisco-sans-tt">typeface-cisco-sans-tt</a>, <a href="https://github.com/zemd/typeface-open-sauce-fonts">typeface-open-sauce-fonts</a>
