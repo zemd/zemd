@@ -39,9 +39,10 @@ OPTIONS
 
     --javascript
       Display javascript or/and typescript projects
-        <a href="https://github.com/zemd/apis/tree/main/packages/http-client">@zemd/http-client</a> - lightweight and functional http client builder
-        <a href="https://github.com/zemd/apis/tree/main/apis/figma">@zemd/figma-rest-api</a> - a rest api client for Figma
-        <a href="https://github.com/zemd/webdav-watch">webdav-watch</a> - a simple cli tool for synchronizing folder with remote webdav server
+        <a href="https://github.com/zemd/apis/tree/main/packages/http-client">@zemd/http-client</a>     - lightweight and functional http client builder
+        <a href="https://github.com/zemd/apis/tree/main/apis/figma">@zemd/figma-rest-api</a>  - a rest api client for Figma
+        <a href="https://github.com/zemd/apis/tree/main/apis/flickr">@zemd/flickr-rest-api</a> - a rest api client for Flickr
+        <a href="https://github.com/zemd/webdav-watch">webdav-watch</a>          - a simple cli tool for synchronizing folder with remote webdav server
   
     --frontend
       Display various javascript or/and typescript libraries aimed specifically to frontend
