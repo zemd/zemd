@@ -39,8 +39,7 @@ OPTIONS
 
     --javascript
       Display javascript or/and typescript projects
-        <a href="https://github.com/logtown/logtown/tree/main/packages/logtown">logtown</a>               - minimalistic logging 
-  facade
+        <a href="https://github.com/logtown/logtown/tree/main/packages/logtown">logtown</a>               - minimalistic logging facade
         <a href="https://github.com/zemd/apis/tree/main/packages/http-client">@zemd/http-client</a>     - lightweight and functional http client builder
         <a href="https://github.com/zemd/apis/tree/main/apis/figma">@zemd/figma-rest-api</a>  - a rest api client for Figma
         <a href="https://github.com/zemd/apis/tree/main/apis/flickr">@zemd/flickr-rest-api</a> - a rest api client for Flickr
