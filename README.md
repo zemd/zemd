@@ -39,6 +39,8 @@ OPTIONS
 
     --javascript
       Display javascript or/and typescript projects
+        <a href="https://github.com/logtown/logtown/tree/main/packages/logtown">logtown</a>               - minimalistic logging 
+  facade
         <a href="https://github.com/zemd/apis/tree/main/packages/http-client">@zemd/http-client</a>     - lightweight and functional http client builder
         <a href="https://github.com/zemd/apis/tree/main/apis/figma">@zemd/figma-rest-api</a>  - a rest api client for Figma
         <a href="https://github.com/zemd/apis/tree/main/apis/flickr">@zemd/flickr-rest-api</a> - a rest api client for Flickr
@@ -51,6 +53,7 @@ OPTIONS
     --backend
       Display projects aimed to work on backend
         <a href="https://github.com/zemd/nestjs-pino-logger">@zemd/nestjs-pino-logger</a> - a pino logger integration with nestjs framework
+        <a href="https://github.com/logtown/logtown/tree/main/packages/logtown-hono">@logtown/hono</a>            - Hono middleware for logging using logtown
   
     --yarn
       Display the list of yarn2 plugins and yarn2 related tools. 
