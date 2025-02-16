@@ -21,7 +21,7 @@ OPTIONS
     --essential
       Display the list of essential projects.
         <a href="https://github.com/zemd/tsconfig">@zemd/tsconfig</a>           - default tsconfig files
-        <a href="https://github.com/zemd/eslint-flat-config">@zemd/eslint-flat-config</a> - ESlint flat config with useful set of rules
+        <a href="https://github.com/zemd/eslint-flat-config">@zemd/eslint-flat-config</a> - ESLint Configs for Modern JavaScript Projects in 2025
         .dotfiles                - my dotfiles
         <a href="https://github.com/zemd/vscode-theme-zemd">vscode dark theme</a>        - VS Code dark theme
 
