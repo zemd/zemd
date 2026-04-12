@@ -36,6 +36,7 @@ OPTIONS
     --react
       Display the list of react projects. 
         <a href="https://github.com/zemd/react-slottable">@zemd/react-slottable</a> - slot foundation for your react components
+        <a href="https://github.com/zemd/react-modals">@zemd/react-modals</a>    - A lightweight React modal management library
 
     --javascript
       Display javascript or/and typescript projects
