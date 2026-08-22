@@ -8,51 +8,43 @@ SYNOPSIS
     zemd [OPTIONS]
 
 DESCRIPTION
-    A father, husband, software expert, and technology enthusiast with over ten
-    years in the field. Still eager to learn new things, take on new challenges,
-    and occasionally discover exciting new ways to misunderstand a
-    specification.
+    A father, husband, software expert, and technology enthusiast with over ten years in the field.
+    Still eager to learn new things, take on new challenges, and occasionally discover exciting new
+    ways to misunderstand a specification.
 
 OPTIONS
     --hey,--hej
-        Open a chat with send_message(). For best results, try linkedin() before
-        email(); packets are friendlier after an introduction.
+        Open a chat with send_message(). For best results, try linkedin() before email(); packets
+        are friendlier after an introduction.
 
     --js
-        JavaScript and TypeScript projects. Small modules, deliberate APIs, and
-        opinions tested in production.
+        JavaScript and TypeScript projects. Small modules, deliberate APIs, and opinions tested in
+        production.
         <a href="https://github.com/zemd/js/tree/main/packages/logtown-hono">@logtown/hono</a>             Hono middleware for logging using logtown
-        <a href="https://github.com/zemd/js/tree/main/packages/color">@zemd/color</a>               Typed sRGB, OKLab, and OKLCH conversion,
-                                  gamut, and validation utilities
-        <a href="https://github.com/zemd/js/tree/main/http-clients/figma">@zemd/figma-rest-api</a>      A lightweight fetch-based and type-safe Figma
-                                  Rest API client.
+        <a href="https://github.com/zemd/js/tree/main/packages/color">@zemd/color</a>               Typed sRGB, OKLab, and OKLCH conversion, gamut, and validation
+                                  utilities
+        <a href="https://github.com/zemd/js/tree/main/http-clients/figma">@zemd/figma-rest-api</a>      A lightweight fetch-based and type-safe Figma Rest API client.
         <a href="https://github.com/zemd/js/tree/main/http-clients/flickr">@zemd/flickr-rest-api</a>     Flickr API client simplified.
-        <a href="https://github.com/zemd/js/tree/main/packages/http-client">@zemd/http-client</a>         A lightweight framework to build your custom
-                                  fetch
+        <a href="https://github.com/zemd/js/tree/main/packages/http-client">@zemd/http-client</a>         A lightweight framework to build your custom fetch
         <a href="https://github.com/zemd/js/tree/main/integrations/nestjs-pino-logger">@zemd/nestjs-pino-logger</a>  NestJS logger powered by Pino
         <a href="https://github.com/zemd/js/tree/main/packages/openapi">@zemd/openapi</a>             OpenAPI typescript definitions and tools
-        <a href="https://github.com/zemd/js/tree/main/packages/std">@zemd/std-modules</a>         Standalone ECMAScript Modules for diverse use
-                                  cases
-        <a href="https://github.com/zemd/js/tree/main/packages/testing">@zemd/testing</a>             Focused, dependency-free helpers for native
-                                  Node.js testing and benchmarking
+        <a href="https://github.com/zemd/js/tree/main/packages/std">@zemd/std-modules</a>         Standalone ECMAScript Modules for diverse use cases
+        <a href="https://github.com/zemd/js/tree/main/packages/testing">@zemd/testing</a>             Focused, dependency-free helpers for native Node.js testing and
+                                  benchmarking
         <a href="https://github.com/zemd/js/tree/main/packages/tsconfig">@zemd/tsconfig</a>            Shared default tsconfig for my projects
         <a href="https://github.com/zemd/js/tree/main/packages/logtown">logtown</a>                   Versatile log wrapper for javascript projects
 
     --react
         React projects built around deliberate composition.
         <a href="https://github.com/zemd/react/tree/main/packages/modals">@zemd/react-modals</a>     A lightweight React modal management library.
-        <a href="https://github.com/zemd/react/tree/main/packages/slottable">@zemd/react-slottable</a>  A lightweight concept to customize subcomponents
-                               in React
+        <a href="https://github.com/zemd/react/tree/main/packages/slottable">@zemd/react-slottable</a>  A lightweight concept to customize subcomponents in React
 
     --web
-        CSS, fonts, and browser-ready foundations. Because browser defaults have
-        strong opinions too.
-        <a href="https://github.com/zemd/web/tree/main/packages/css-reset">@zemd/css-reset</a>                  A small CSS reset for modern web
-                                         development.
-        <a href="https://github.com/zemd/web/tree/main/fonts/typeface-cisco-sans-tt">@zemd/typeface-cisco-sans-tt</a>     Self-hosted Cisco Sans TT font files
-                                         and ready-to-use CSS.
-        <a href="https://github.com/zemd/web/tree/main/fonts/typeface-open-sauce-fonts">@zemd/typeface-open-sauce-fonts</a>  Self-hosted Open Sauce font files and
-                                         ready-to-use CSS.
+        CSS, fonts, and browser-ready foundations. Because browser defaults have strong opinions
+        too.
+        <a href="https://github.com/zemd/web/tree/main/packages/css-reset">@zemd/css-reset</a>                  A small CSS reset for modern web development.
+        <a href="https://github.com/zemd/web/tree/main/fonts/typeface-cisco-sans-tt">@zemd/typeface-cisco-sans-tt</a>     Self-hosted Cisco Sans TT font files and ready-to-use CSS.
+        <a href="https://github.com/zemd/web/tree/main/fonts/typeface-open-sauce-fonts">@zemd/typeface-open-sauce-fonts</a>  Self-hosted Open Sauce font files and ready-to-use CSS.
 
     --tooling
         Shared developer tooling with predictable defaults for humans.
@@ -66,8 +58,7 @@ OPTIONS
 
     --contributions
         Displays open-source projects I have sent a few useful packets to.
-        <a href="https://github.com/hazelcast/hazelcast-nodejs-client/commits/master/?author=zemd">hazelcast-client</a> (2017)  implemented `ReplicatedMap` and `Semaphore`
-                                 support.
+        <a href="https://github.com/hazelcast/hazelcast-nodejs-client/commits/master/?author=zemd">hazelcast-client</a> (2017)  implemented `ReplicatedMap` and `Semaphore` support.
 
 SUPPORTED EXTENSIONS
     *.sh, *.js, *.ts, *.tsx, *.mjs, *.cjs, *.go, *.rs

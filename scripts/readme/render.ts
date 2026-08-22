@@ -5,7 +5,7 @@ import type {
   ProjectGroup,
 } from "./types.ts";
 
-const MAN_PAGE_WIDTH = 80;
+const MAN_PAGE_WIDTH = 100;
 
 /** Renders the complete GitHub profile README as an HTML-backed man page. */
 export function renderReadme(
