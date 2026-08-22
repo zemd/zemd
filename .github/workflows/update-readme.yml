@@ -1,0 +1,101 @@
+name: Update profile README
+
+on:
+  schedule:
+    - cron: "17 7 * * 1"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: update-profile-readme
+  cancel-in-progress: true
+
+jobs:
+  update:
+    name: Rebuild README
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Check out the profile repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "lts/*"
+          cache: pnpm
+
+      - name: Install development tools
+        run: pnpm install --frozen-lockfile
+
+      - name: Test the generator
+        run: pnpm test
+
+      - name: Check formatting
+        run: pnpm format-check
+
+      - name: Lint the generator
+        run: pnpm lint-check
+
+      - name: Type-check the generator
+        run: pnpm typecheck
+
+      - name: Rebuild the README
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: pnpm build:readme
+
+      - name: Check for README changes
+        id: readme
+        shell: bash
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README.md is already current"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create Release Branchkeeper token
+        if: steps.readme.outputs.changed == 'true'
+        id: release-branchkeeper-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ vars.RELEASE_BRANCHKEEPER_CLIENT_ID }}
+          private-key: ${{ secrets.RELEASE_BRANCHKEEPER_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.repository }}
+          permission-contents: write
+
+      - name: Get Release Branchkeeper user ID
+        if: steps.readme.outputs.changed == 'true'
+        id: release-branchkeeper-user
+        env:
+          GH_TOKEN: ${{ steps.release-branchkeeper-token.outputs.token }}
+        run: |
+          app_slug='${{ steps.release-branchkeeper-token.outputs.app-slug }}'
+          user_id=$(gh api "/users/${app_slug}[bot]" --jq .id)
+          echo "id=${user_id}" >> "$GITHUB_OUTPUT"
+
+      - name: Commit a changed README
+        if: steps.readme.outputs.changed == 'true'
+        env:
+          APP_SLUG: ${{ steps.release-branchkeeper-token.outputs.app-slug }}
+          APP_USER_ID: ${{ steps.release-branchkeeper-user.outputs.id }}
+          GH_TOKEN: ${{ steps.release-branchkeeper-token.outputs.token }}
+        shell: bash
+        run: |
+          git config user.name "${APP_SLUG}[bot]"
+          git config user.email "${APP_USER_ID}+${APP_SLUG}[bot]@users.noreply.github.com"
+          gh auth setup-git
+          git add README.md
+          git commit -m "chore: refresh profile README"
+          git push

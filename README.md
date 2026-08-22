@@ -8,67 +8,69 @@ SYNOPSIS
     zemd [OPTIONS]
 
 DESCRIPTION
-    A father, husband, software expert and technology enthusiast with a project 
-    history of over ten years and seasoned in various technologies. I am eager 
-    to learn new things and take on new challenges.
+    A father, husband, software expert, and technology enthusiast with over ten
+    years in the field. Still eager to learn new things, take on new challenges,
+    and occasionally discover exciting new ways to misunderstand a
+    specification.
 
 OPTIONS
     --hey,--hej
-        Open the chat with the the sender using the send_message() system call. 
-        Send and receive data. There are a number of ways to do this, but the 
-        simplest is to use the linkedin() and email() system calls.
+        Open a chat with send_message(). For best results, try linkedin() before
+        email(); packets are friendlier after an introduction.
 
-    --essential
-      Display the list of essential projects.
-        <a href="https://github.com/zemd/tsconfig">@zemd/tsconfig</a>           - default tsconfig files
-        <a href="https://github.com/zemd/eslint-flat-config">@zemd/eslint-flat-config</a> - ESLint Configs for Modern JavaScript Projects in 2025
-        .dotfiles                - my dotfiles
-        <a href="https://github.com/zemd/vscode-theme-zemd">vscode dark theme</a>        - VS Code dark theme
+    --js
+        JavaScript and TypeScript projects. Small modules, deliberate APIs, and
+        opinions tested in production.
+        <a href="https://github.com/zemd/js/tree/main/packages/logtown-hono">@logtown/hono</a>             Hono middleware for logging using logtown
+        <a href="https://github.com/zemd/js/tree/main/packages/color">@zemd/color</a>               Typed sRGB, OKLab, and OKLCH conversion,
+                                  gamut, and validation utilities
+        <a href="https://github.com/zemd/js/tree/main/http-clients/figma">@zemd/figma-rest-api</a>      A lightweight fetch-based and type-safe Figma
+                                  Rest API client.
+        <a href="https://github.com/zemd/js/tree/main/http-clients/flickr">@zemd/flickr-rest-api</a>     Flickr API client simplified.
+        <a href="https://github.com/zemd/js/tree/main/packages/http-client">@zemd/http-client</a>         A lightweight framework to build your custom
+                                  fetch
+        <a href="https://github.com/zemd/js/tree/main/integrations/nestjs-pino-logger">@zemd/nestjs-pino-logger</a>  NestJS logger powered by Pino
+        <a href="https://github.com/zemd/js/tree/main/packages/openapi">@zemd/openapi</a>             OpenAPI typescript definitions and tools
+        <a href="https://github.com/zemd/js/tree/main/packages/std">@zemd/std-modules</a>         Standalone ECMAScript Modules for diverse use
+                                  cases
+        <a href="https://github.com/zemd/js/tree/main/packages/testing">@zemd/testing</a>             Focused, dependency-free helpers for native
+                                  Node.js testing and benchmarking
+        <a href="https://github.com/zemd/js/tree/main/packages/tsconfig">@zemd/tsconfig</a>            Shared default tsconfig for my projects
+        <a href="https://github.com/zemd/js/tree/main/packages/logtown">logtown</a>                   Versatile log wrapper for javascript projects
 
-    --css
-      Display packages and projects related to CSS.
-        <a href="https://github.com/zemd/css-reset">@zemd/css-reset</a>           - simple and minimal CSS reset for modern web development.
-        <a href="https://github.com/zemd/open-props">@zemd/open-props</a>          - supercharged CSS variables for modern web
-        <a href="https://github.com/zemd/tailwind-with-props">@zemd/tailwind-with-props</a> - a Tailwind preset that maps theme config options to CSS custom properties
-        <a href="https://github.com/zemd/typeface-cisco-sans-tt">typeface-cisco-sans-tt</a>    - self-host the Cisco Sans TT fonts in a neatly bundled NPM package
-        <a href="https://github.com/zemd/typeface-open-sauce-fonts">typeface-open-sauce-fonts</a> - self-host the Open Sauce fonts in a neatly bundled NPM package.
-  
     --react
-      Display the list of react projects. 
-        <a href="https://github.com/zemd/react-slottable">@zemd/react-slottable</a> - slot foundation for your react components
-        <a href="https://github.com/zemd/react-modals">@zemd/react-modals</a>    - A lightweight React modal management library
+        React projects built around deliberate composition.
+        <a href="https://github.com/zemd/react/tree/main/packages/modals">@zemd/react-modals</a>     A lightweight React modal management library.
+        <a href="https://github.com/zemd/react/tree/main/packages/slottable">@zemd/react-slottable</a>  A lightweight concept to customize subcomponents
+                               in React
 
-    --javascript
-      Display javascript or/and typescript projects
-        <a href="https://github.com/logtown/logtown/tree/main/packages/logtown">logtown</a>               - minimalistic logging facade
-        <a href="https://github.com/zemd/apis/tree/main/packages/http-client">@zemd/http-client</a>     - lightweight and functional http client builder
-        <a href="https://github.com/zemd/apis/tree/main/apis/figma">@zemd/figma-rest-api</a>  - a rest api client for Figma
-        <a href="https://github.com/zemd/apis/tree/main/apis/flickr">@zemd/flickr-rest-api</a> - a rest api client for Flickr
-        <a href="https://github.com/zemd/webdav-watch">webdav-watch</a>          - a simple cli tool for synchronizing folder with remote webdav server
-  
-    --frontend
-      Display various javascript or/and typescript libraries aimed specifically to frontend
-        <a href="https://github.com/zemd/drag-and-drop">@zemd/drag-and-drop</a> - simple drag and drop framework
+    --web
+        CSS, fonts, and browser-ready foundations. Because browser defaults have
+        strong opinions too.
+        <a href="https://github.com/zemd/web/tree/main/packages/css-reset">@zemd/css-reset</a>                  A small CSS reset for modern web
+                                         development.
+        <a href="https://github.com/zemd/web/tree/main/fonts/typeface-cisco-sans-tt">@zemd/typeface-cisco-sans-tt</a>     Self-hosted Cisco Sans TT font files
+                                         and ready-to-use CSS.
+        <a href="https://github.com/zemd/web/tree/main/fonts/typeface-open-sauce-fonts">@zemd/typeface-open-sauce-fonts</a>  Self-hosted Open Sauce font files and
+                                         ready-to-use CSS.
 
-    --backend
-      Display projects aimed to work on backend
-        <a href="https://github.com/zemd/nestjs-pino-logger">@zemd/nestjs-pino-logger</a> - a pino logger integration with nestjs framework
-        <a href="https://github.com/logtown/logtown/tree/main/packages/logtown-hono">@logtown/hono</a>            - Hono middleware for logging using logtown
-  
-    --yarn
-      Display the list of yarn2 plugins and yarn2 related tools. 
-        <a href="https://github.com/zemd/yarn-plugin-wait">yarn-plugin-wait</a>         - plugin that can wait
-        <a href="https://github.com/zemd/yarn-plugin-script-tools">yarn-plugin-script-tools</a> - replacing npm scripts with yml instruction file
-        <a href="https://github.com/zemd/yarn-plugin-check">yarn-plugin-check</a>        - plugin that can check(port or exit status of the custom command)
-        <a href="https://github.com/zemd/yarn-plugin-banner-tools">yarn-plugin-banner-tools</a> - plugin that displays ascii banner
+    --tooling
+        Shared developer tooling with predictable defaults for humans.
+        <a href="https://github.com/zemd/tooling/tree/main/eslint/astro">@zemd/eslint-astro</a>       Shared ESLint config for Astro-based projects
+        <a href="https://github.com/zemd/tooling/tree/main/eslint/common">@zemd/eslint-common</a>      Common utilities for @zemd/eslint-* packages
+        <a href="https://github.com/zemd/tooling/tree/main/eslint/js">@zemd/eslint-js</a>          Shared ESLint config for JavaScript projects
+        <a href="https://github.com/zemd/tooling/tree/main/eslint/next">@zemd/eslint-next</a>        Shared ESLint config for Next.js projects
+        <a href="https://github.com/zemd/tooling/tree/main/eslint/react">@zemd/eslint-react</a>       Shared ESLint config for React projects
+        <a href="https://github.com/zemd/tooling/tree/main/eslint/rock-stack">@zemd/eslint-rock-stack</a>  Shared ESLint config for modern projects
+        <a href="https://github.com/zemd/tooling/tree/main/eslint/ts">@zemd/eslint-ts</a>          Shared ESLint config for TypeScript projects
 
     --contributions
-      Display the list of open source projects that I participated in.
-        <a href="https://github.com/hazelcast/hazelcast-nodejs-client">hazelcast-client</a> (2017)- implemented `ReplicatedMap` and `Semaphore` data structures
-  
+        Displays open-source projects I have sent a few useful packets to.
+        <a href="https://github.com/hazelcast/hazelcast-nodejs-client">hazelcast-client</a> (2017)  implemented `ReplicatedMap` and `Semaphore`
+                                 support.
+
 SUPPORTED EXTENSIONS
-    *.sh, *.js, *.ts, *.tsx,
-    *.mjs, *.cjs, *.go, *.rs
+    *.sh, *.js, *.ts, *.tsx, *.mjs, *.cjs, *.go, *.rs
 
 DEPRECATED EXTENSIONS
     *.java, *.php, *.rb
@@ -77,8 +79,7 @@ COMPANY
     Ikea IT AB
 
 PREVIOUS COMPANIES
-    Gopuff, Edgio, Waverley Software,
-    Cprime, DataArt
+    Gopuff, Edgio, Waverley Software, Cprime, DataArt
 
 ENVIRONMENT VARIABLES
     LANG
@@ -88,7 +89,11 @@ ENVIRONMENT VARIABLES
         <a href="https://goo.gl/maps/sbiJxv6H3PkPdDcy7" target="_blank">Malmö, Sweden</a>
 
 KNOWN BUGS
-    Requires to use Linkedin messages before establishing communication via email.
+    Cold email may return ECONNREFUSED. This is probably a feature.
+
+NOTES
+    Run `pnpm build:readme` to rebuild locally or `pnpm preview:readme` to
+    inspect without writing. The internet is, regrettably, still a dependency.
 
 SEE ALSO
     <a href="https://okro.sh/gc" target="_blank">blog(4)</a>, <a href="https://okro.sh/gl" target="_blank">linkedin(4)</a>,
