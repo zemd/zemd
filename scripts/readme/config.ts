@@ -5,7 +5,7 @@ export const profileConfig: ProfileConfig = {
   contributions: [
     {
       description: "implemented `ReplicatedMap` and `Semaphore` support.",
-      link: "https://github.com/hazelcast/hazelcast-nodejs-client",
+      link: "https://github.com/hazelcast/hazelcast-nodejs-client/commits/master/?author=zemd",
       name: "hazelcast-client",
       year: 2017,
     },
