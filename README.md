@@ -66,7 +66,7 @@ OPTIONS
 
     --contributions
         Displays open-source projects I have sent a few useful packets to.
-        <a href="https://github.com/hazelcast/hazelcast-nodejs-client">hazelcast-client</a> (2017)  implemented `ReplicatedMap` and `Semaphore`
+        <a href="https://github.com/hazelcast/hazelcast-nodejs-client/commits/master/?author=zemd">hazelcast-client</a> (2017)  implemented `ReplicatedMap` and `Semaphore`
                                  support.
 
 SUPPORTED EXTENSIONS
@@ -76,7 +76,7 @@ DEPRECATED EXTENSIONS
     *.java, *.php, *.rb
 
 COMPANY
-    Ikea IT AB
+    IKEA IT AB
 
 PREVIOUS COMPANIES
     Gopuff, Edgio, Waverley Software, Cprime, DataArt
@@ -90,10 +90,6 @@ ENVIRONMENT VARIABLES
 
 KNOWN BUGS
     Cold email may return ECONNREFUSED. This is probably a feature.
-
-NOTES
-    Run `pnpm build:readme` to rebuild locally or `pnpm preview:readme` to
-    inspect without writing. The internet is, regrettably, still a dependency.
 
 SEE ALSO
     <a href="https://okro.sh/gc" target="_blank">blog(4)</a>, <a href="https://okro.sh/gl" target="_blank">linkedin(4)</a>,

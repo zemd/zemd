@@ -57,14 +57,6 @@ export function renderReadme(
     "KNOWN BUGS",
     ...config.knownBugs.flatMap((bug) => wrapText(bug, 4)),
     "",
-    "NOTES",
-    ...wrapText(
-      "Run `pnpm build:readme` to rebuild locally or `pnpm " +
-        "preview:readme` to inspect without writing. The internet is, " +
-        "regrettably, still a dependency.",
-      4,
-    ),
-    "",
     "SEE ALSO",
     ...renderSeeAlso(config.seeAlso),
     "</pre>",

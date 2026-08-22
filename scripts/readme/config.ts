@@ -1,7 +1,7 @@
 import type { ProfileConfig } from "./types.ts";
 
 export const profileConfig: ProfileConfig = {
-  company: "Ikea IT AB",
+  company: "IKEA IT AB",
   contributions: [
     {
       description: "implemented `ReplicatedMap` and `Semaphore` support.",

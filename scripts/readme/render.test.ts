@@ -37,7 +37,7 @@ void test("renders repository packages, contributions, and retained profile sect
   assert.match(readme, /PREVIOUS COMPANIES/u);
   assert.match(readme, /ENVIRONMENT VARIABLES/u);
   assert.match(readme, /KNOWN BUGS/u);
-  assert.match(readme, /Run `pnpm build:readme`/u);
+  assert.doesNotMatch(readme, /NOTES/u);
   assert.match(readme, /SEE ALSO/u);
   assert.match(readme, /<\/pre>\n$/u);
 });
