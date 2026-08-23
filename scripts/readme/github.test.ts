@@ -25,7 +25,7 @@ const monorepoConfig: RepositoryConfig = {
   monorepo: true,
 };
 
-void test("discovers only publishable workspace packages and links their folders", async () => {
+void test("discovers public and allowlisted private workspace packages", async () => {
   const responses = new Map<string, string | object>([
     [
       "https://api.github.com/repos/zemd/example/git/trees/main?recursive=1",
@@ -36,6 +36,7 @@ void test("discovers only publishable workspace packages and links their folders
           { path: "pnpm-workspace.yaml", type: "blob" },
           { path: "packages/public/package.json", type: "blob" },
           { path: "packages/private/package.json", type: "blob" },
+          { path: "vscode/theme-onyx/package.json", type: "blob" },
           { path: "packages/public/example/package.json", type: "blob" },
         ],
         truncated: false,
@@ -47,7 +48,7 @@ void test("discovers only publishable workspace packages and links their folders
     ],
     [
       "https://raw.githubusercontent.com/zemd/example/main/pnpm-workspace.yaml",
-      "packages:\n  - packages/*\n",
+      "packages:\n  - packages/*\n  - vscode/*\n",
     ],
     [
       "https://raw.githubusercontent.com/zemd/example/main/packages/public/package.json",
@@ -57,14 +58,21 @@ void test("discovers only publishable workspace packages and links their folders
       "https://raw.githubusercontent.com/zemd/example/main/packages/private/package.json",
       JSON.stringify({ name: "@zemd/private", private: true }),
     ],
+    [
+      "https://raw.githubusercontent.com/zemd/example/main/vscode/theme-onyx/package.json",
+      JSON.stringify({
+        name: "zemd-theme-dark",
+        private: true,
+        description: "A Visual Studio Code theme for effective work",
+      }),
+    ],
   ]);
   const fetchImplementation = createFixtureFetch(responses);
   const client = createGitHubClient({ fetchImplementation });
-  const group = await client.readRepositoryGroup(
-    "zemd",
-    repository,
-    monorepoConfig,
-  );
+  const group = await client.readRepositoryGroup("zemd", repository, {
+    ...monorepoConfig,
+    privatePackageAllowlist: ["vscode/theme-onyx/package.json"],
+  });
 
   assert.deepEqual(group, {
     description: "Displays examples.",
@@ -74,6 +82,11 @@ void test("discovers only publishable workspace packages and links their folders
         description: "Public package",
         link: "https://github.com/zemd/example/tree/main/packages/public",
         name: "@zemd/public",
+      },
+      {
+        description: "A Visual Studio Code theme for effective work",
+        link: "https://github.com/zemd/example/tree/main/vscode/theme-onyx",
+        name: "zemd-theme-dark",
       },
     ],
   });

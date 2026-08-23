@@ -43,6 +43,7 @@ export const profileConfig: ProfileConfig = {
       description:
         "Shared developer tooling with predictable defaults for humans.",
       monorepo: true,
+      privatePackageAllowlist: ["vscode/theme-onyx/package.json"],
     },
   },
   seeAlso: [

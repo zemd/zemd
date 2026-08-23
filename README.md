@@ -55,6 +55,7 @@ OPTIONS
         <a href="https://github.com/zemd/tooling/tree/main/eslint/react">@zemd/eslint-react</a>       Shared ESLint config for React projects
         <a href="https://github.com/zemd/tooling/tree/main/eslint/rock-stack">@zemd/eslint-rock-stack</a>  Shared ESLint config for modern projects
         <a href="https://github.com/zemd/tooling/tree/main/eslint/ts">@zemd/eslint-ts</a>          Shared ESLint config for TypeScript projects
+        <a href="https://github.com/zemd/tooling/tree/main/vscode/theme-onyx">zemd-theme-dark</a>          A Visual Studio Code theme for effective work
 
     --contributions
         Displays open-source projects I have sent a few useful packets to.

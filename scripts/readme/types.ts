@@ -47,6 +47,8 @@ export interface RepositoryConfig {
   description: string;
   /** Whether to discover public packages from the repository's workspaces. */
   monorepo: boolean;
+  /** Private package manifests that should still appear in the README. */
+  privatePackageAllowlist?: string[];
 }
 
 export interface ProfileConfig {

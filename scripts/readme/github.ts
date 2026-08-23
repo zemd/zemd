@@ -163,9 +163,18 @@ export function createGitHubClient(
           return [manifestPath, source] as const;
         }),
       );
+      const privatePackageAllowlist = new Set(
+        config.privatePackageAllowlist ?? [],
+      );
       const projects = sources
         .map(([manifestPath, source]) =>
-          packageToProject(owner, repository, manifestPath, source),
+          packageToProject(
+            owner,
+            repository,
+            manifestPath,
+            source,
+            privatePackageAllowlist.has(manifestPath),
+          ),
         )
         .filter((project): project is Project => project !== undefined)
         .sort((left, right) => left.name.localeCompare(right.name, "en"));
@@ -276,12 +285,13 @@ function packageToProject(
   repository: GitHubRepository,
   manifestPath: string,
   source: string,
+  allowPrivate: boolean,
 ): Project | undefined {
   const manifest = parsePackageManifest(
     source,
     `${repository.name}/${manifestPath}`,
   );
-  if (manifest.private === true || !manifest.name?.trim()) {
+  if ((manifest.private === true && !allowPrivate) || !manifest.name?.trim()) {
     return undefined;
   }
 
