@@ -25,7 +25,7 @@ const monorepoConfig: RepositoryConfig = {
   monorepo: true,
 };
 
-void test("discovers public and allowlisted private workspace packages", async () => {
+void test("discovers workspace packages and configured skills", async () => {
   const responses = new Map<string, string | object>([
     [
       "https://api.github.com/repos/zemd/example/git/trees/main?recursive=1",
@@ -37,6 +37,7 @@ void test("discovers public and allowlisted private workspace packages", async (
           { path: "packages/public/package.json", type: "blob" },
           { path: "packages/private/package.json", type: "blob" },
           { path: "vscode/theme-onyx/package.json", type: "blob" },
+          { path: "skills/calculate-colors/SKILL.md", type: "blob" },
           { path: "packages/public/example/package.json", type: "blob" },
         ],
         truncated: false,
@@ -66,12 +67,17 @@ void test("discovers public and allowlisted private workspace packages", async (
         description: "A Visual Studio Code theme for effective work",
       }),
     ],
+    [
+      "https://raw.githubusercontent.com/zemd/example/main/skills/calculate-colors/SKILL.md",
+      "---\nname: calculate-colors\ndescription: Calculate colors without guessing.\n---\n",
+    ],
   ]);
   const fetchImplementation = createFixtureFetch(responses);
   const client = createGitHubClient({ fetchImplementation });
   const group = await client.readRepositoryGroup("zemd", repository, {
     ...monorepoConfig,
     privatePackageAllowlist: ["vscode/theme-onyx/package.json"],
+    skills: true,
   });
 
   assert.deepEqual(group, {
@@ -82,6 +88,11 @@ void test("discovers public and allowlisted private workspace packages", async (
         description: "Public package",
         link: "https://github.com/zemd/example/tree/main/packages/public",
         name: "@zemd/public",
+      },
+      {
+        description: "Calculate colors without guessing.",
+        link: "https://github.com/zemd/example/tree/main/skills/calculate-colors",
+        name: "calculate-colors",
       },
       {
         description: "A Visual Studio Code theme for effective work",
@@ -144,12 +155,14 @@ void test("uses configured repositories as an ordered allowlist", async () => {
     Object.entries(profileConfig.repositories).map(([name, config]) => [
       name,
       config.monorepo,
+      config.skills ?? false,
     ]),
     [
-      ["js", true],
-      ["react", true],
-      ["web", true],
-      ["tooling", true],
+      ["js", true, false],
+      ["react", true, false],
+      ["web", true, false],
+      ["tooling", true, false],
+      ["ai", true, true],
     ],
   );
   assert.deepEqual(requestedRepositories, ["js", "tooling"]);

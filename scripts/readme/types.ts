@@ -49,6 +49,8 @@ export interface RepositoryConfig {
   monorepo: boolean;
   /** Private package manifests that should still appear in the README. */
   privatePackageAllowlist?: string[];
+  /** Whether to discover direct child Agent Skills from the `skills` directory. */
+  skills?: boolean;
 }
 
 export interface ProfileConfig {

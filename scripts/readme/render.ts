@@ -66,7 +66,7 @@ export function renderReadme(
   return lines.join("\n");
 }
 
-/** Renders one repository and all of its publishable packages as an option. */
+/** Renders one repository and all of its discovered projects as an option. */
 function renderProjectGroup(group: ProjectGroup): string[] {
   return [
     `    --${escapeHtml(group.flag)}`,

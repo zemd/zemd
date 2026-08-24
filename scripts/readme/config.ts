@@ -45,6 +45,11 @@ export const profileConfig: ProfileConfig = {
       monorepo: true,
       privatePackageAllowlist: ["vscode/theme-onyx/package.json"],
     },
+    ai: {
+      description: "AI tools, agents, skills, and MCP servers.",
+      monorepo: true,
+      skills: true,
+    },
   },
   seeAlso: [
     { description: "blog(4)", link: "https://okro.sh/gc", name: "blog(4)" },

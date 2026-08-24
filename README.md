@@ -57,6 +57,14 @@ OPTIONS
         <a href="https://github.com/zemd/tooling/tree/main/eslint/ts">@zemd/eslint-ts</a>          Shared ESLint config for TypeScript projects
         <a href="https://github.com/zemd/tooling/tree/main/vscode/theme-onyx">zemd-theme-dark</a>          A Visual Studio Code theme for effective work
 
+    --ai
+        AI tools, agents, skills, and MCP servers.
+        <a href="https://github.com/zemd/ai/tree/main/mcp/color">@zemd/color-mcp</a>   MCP server for sRGB, OKLab, and OKLCH color conversion and gamut
+                          calculations
+        <a href="https://github.com/zemd/ai/tree/main/skills/calculate-colors">calculate-colors</a>  Calculate and compare opaque colors with the @zemd/color-mcp server. Use
+                          when converting hex, RGB, OKLab, or OKLCH colors, checking sRGB gamut,
+                          finding maximum chroma, or building hue-consistent palettes.
+
     --contributions
         Displays open-source projects I have sent a few useful packets to.
         <a href="https://github.com/hazelcast/hazelcast-nodejs-client/commits/master/?author=zemd">hazelcast-client</a> (2017)  implemented `ReplicatedMap` and `Semaphore` support.

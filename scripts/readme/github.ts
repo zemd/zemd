@@ -12,6 +12,7 @@ import {
   parsePnpmWorkspacePackages,
   selectWorkspaceManifestPaths,
 } from "./workspaces.ts";
+import { parseSkillManifest, selectSkillManifestPaths } from "./skills.ts";
 
 const GITHUB_API = "https://api.github.com";
 const GITHUB_RAW = "https://raw.githubusercontent.com";
@@ -148,26 +149,42 @@ export function createGitHubClient(
         repositoryPaths,
         workspacePatterns,
       );
-      const sources = await Promise.all(
-        manifestPaths.map(async (manifestPath) => {
-          if (manifestPath === rootManifestPath && rootManifestSource) {
-            return [manifestPath, rootManifestSource] as const;
-          }
+      const skillManifestPaths = config.skills
+        ? selectSkillManifestPaths(repositoryPaths)
+        : [];
+      const [sources, skillSources] = await Promise.all([
+        Promise.all(
+          manifestPaths.map(async (manifestPath) => {
+            if (manifestPath === rootManifestPath && rootManifestSource) {
+              return [manifestPath, rootManifestSource] as const;
+            }
 
-          const source = await requestRawText(
-            fetchImplementation,
-            owner,
-            repository,
-            manifestPath,
-          );
-          return [manifestPath, source] as const;
-        }),
-      );
+            const source = await requestRawText(
+              fetchImplementation,
+              owner,
+              repository,
+              manifestPath,
+            );
+            return [manifestPath, source] as const;
+          }),
+        ),
+        Promise.all(
+          skillManifestPaths.map(async (manifestPath) => {
+            const source = await requestRawText(
+              fetchImplementation,
+              owner,
+              repository,
+              manifestPath,
+            );
+            return [manifestPath, source] as const;
+          }),
+        ),
+      ]);
       const privatePackageAllowlist = new Set(
         config.privatePackageAllowlist ?? [],
       );
-      const projects = sources
-        .map(([manifestPath, source]) =>
+      const projects = [
+        ...sources.map(([manifestPath, source]) =>
           packageToProject(
             owner,
             repository,
@@ -175,7 +192,11 @@ export function createGitHubClient(
             source,
             privatePackageAllowlist.has(manifestPath),
           ),
-        )
+        ),
+        ...skillSources.map(([manifestPath, source]) =>
+          skillToProject(repository, manifestPath, source),
+        ),
+      ]
         .filter((project): project is Project => project !== undefined)
         .sort((left, right) => left.name.localeCompare(right.name, "en"));
 
@@ -299,23 +320,50 @@ function packageToProject(
     manifestPath === "package.json"
       ? ""
       : manifestPath.slice(0, -"/package.json".length);
-  const encodedDirectory = directory
-    .split("/")
-    .filter(Boolean)
-    .map(encodeURIComponent)
-    .join("/");
-  const link = encodedDirectory
-    ? `${repository.html_url}/tree/` +
-      `${encodeURIComponent(repository.default_branch)}/${encodedDirectory}`
-    : repository.html_url;
 
   return {
     description:
       manifest.description?.trim() ||
       `A publishable package from ${owner}/${repository.name}.`,
-    link,
+    link: repositoryDirectoryLink(repository, directory),
     name: manifest.name.trim(),
   };
+}
+
+/** Converts an Agent Skill manifest into a linked README project. */
+function skillToProject(
+  repository: GitHubRepository,
+  manifestPath: string,
+  source: string,
+): Project {
+  const manifest = parseSkillManifest(
+    source,
+    `${repository.name}/${manifestPath}`,
+  );
+  const directory = manifestPath.slice(0, -"/SKILL.md".length);
+
+  return {
+    description: manifest.description,
+    link: repositoryDirectoryLink(repository, directory),
+    name: manifest.name,
+  };
+}
+
+/** Creates a GitHub link for a repository-relative directory. */
+function repositoryDirectoryLink(
+  repository: GitHubRepository,
+  directory: string,
+): string {
+  const encodedDirectory = directory
+    .split("/")
+    .filter(Boolean)
+    .map(encodeURIComponent)
+    .join("/");
+
+  return encodedDirectory
+    ? `${repository.html_url}/tree/` +
+        `${encodeURIComponent(repository.default_branch)}/${encodedDirectory}`
+    : repository.html_url;
 }
 
 /** Falls back to repository metadata when a repository has no public package. */
