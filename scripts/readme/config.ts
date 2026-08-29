@@ -64,9 +64,9 @@ export const profileConfig: ProfileConfig = {
       name: "onlyfans(6)",
     },
     {
-      description: "codewars(4)",
-      link: "https://okro.sh/gcws",
-      name: "codewars(4)",
+      description: "npm(4)",
+      link: "https://okro.sh/gnpm",
+      name: "npm(4)",
     },
   ],
   summary:

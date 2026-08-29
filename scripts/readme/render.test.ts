@@ -9,6 +9,7 @@ void test("renders repository packages, contributions, and retained profile sect
     {
       description: "Displays JavaScript projects with a sense of humor.",
       flag: "js",
+      link: "https://github.com/zemd/js",
       projects: [
         {
           description: "Typed color utilities",
@@ -25,7 +26,10 @@ void test("renders repository packages, contributions, and retained profile sect
   ]);
 
   assert.match(readme, /^# Hey 👋\n\n<pre>\nNAME/u);
-  assert.match(readme, /    --js\n/u);
+  assert.match(
+    readme,
+    /    --<a href="https:\/\/github\.com\/zemd\/js">js<\/a>\n/u,
+  );
   assert.match(
     readme,
     /<a href="https:\/\/github\.com\/zemd\/js\/tree\/main\/packages\/color">@zemd\/color<\/a>/u,
@@ -39,5 +43,10 @@ void test("renders repository packages, contributions, and retained profile sect
   assert.match(readme, /KNOWN BUGS/u);
   assert.doesNotMatch(readme, /NOTES/u);
   assert.match(readme, /SEE ALSO/u);
+  assert.match(
+    readme,
+    /<a href="https:\/\/okro\.sh\/gnpm" target="_blank">npm\(4\)<\/a>/u,
+  );
+  assert.doesNotMatch(readme, /codewars/iu);
   assert.match(readme, /<\/pre>\n$/u);
 });

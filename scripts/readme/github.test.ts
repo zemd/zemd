@@ -83,6 +83,7 @@ void test("discovers workspace packages and configured skills", async () => {
   assert.deepEqual(group, {
     description: "Displays examples.",
     flag: "example",
+    link: "https://github.com/zemd/example",
     projects: [
       {
         description: "Public package",
@@ -144,6 +145,7 @@ void test("uses configured repositories as an ordered allowlist", async () => {
       return {
         description: config.description,
         flag: listedRepository.name,
+        link: listedRepository.html_url,
         projects: [],
       };
     },
@@ -187,6 +189,7 @@ void test("does not inspect package trees for a single-package repository", asyn
   assert.deepEqual(group, {
     description: "Displays one example.",
     flag: "example",
+    link: "https://github.com/zemd/example",
     projects: [
       {
         description: "A test monorepo",

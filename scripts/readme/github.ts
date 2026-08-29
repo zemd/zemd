@@ -72,6 +72,7 @@ export function createGitHubClient(
         return {
           description: config.description,
           flag: repository.name,
+          link: repository.html_url,
           projects: [repositoryToProject(repository)],
         };
       }
@@ -203,6 +204,7 @@ export function createGitHubClient(
       return {
         description: config.description,
         flag: repository.name,
+        link: repository.html_url,
         projects:
           projects.length > 0 ? projects : [repositoryToProject(repository)],
       };

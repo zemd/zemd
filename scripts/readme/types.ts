@@ -36,6 +36,7 @@ export interface Project {
 export interface ProjectGroup {
   description: string;
   flag: string;
+  link: string;
   projects: Project[];
 }
 

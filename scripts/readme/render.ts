@@ -69,7 +69,7 @@ export function renderReadme(
 /** Renders one repository and all of its discovered projects as an option. */
 function renderProjectGroup(group: ProjectGroup): string[] {
   return [
-    `    --${escapeHtml(group.flag)}`,
+    `    --${htmlLink(group.link, group.flag)}`,
     ...wrapText(group.description, 8),
     ...renderLinkedRows(group.projects),
     "",
